@@ -12,6 +12,7 @@
       crossorigin="anonymous"
     />
     <script src="assets/app.js"></script>
+    <script src="https://kit.fontawesome.com/c4ee40b5d5.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <main class="container-fluid" style="font-family: 'Actor', sans-serif">
@@ -43,12 +44,15 @@
             </div>
             <div class="form-group">
               <label for="password">Password</label>
+              <div id="password-container">
               <input
                 type="password"
                 class="form-control"
                 id="password"
                 placeholder="Enter password"
               />
+              <i class="fa-solid fa-eye" id="show-password-toggle"></i>
+            </div>
             </div>
             <div class="d-flex justify-content-between mb-2">
               <label class="d-flex align-items-center">
