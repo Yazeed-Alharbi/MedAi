@@ -1,67 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Dashboard</title>
-    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/style.css">
     <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
     <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <img
-        class="navbar-brand img-fluid"
-        src="assets/MedAi_logo_dark.png"
-        alt="logo"
-        style="max-height: 50px"
-      />
-
-      <div class="ml-auto">
-        <a href="login.html"><i class="fas fa-sign-out"></i></a>
-      </div>
-    </nav>
-      </nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <img class="navbar-brand img-fluid" src="assets/MedAi_logo_dark.png" alt="logo" style="max-height: 50px">
+            <div class="ml-auto">
+                <a href="login.html"><i class="fas fa-sign-out"></i></a>
+            </div>
+        </nav>
     </header>
 
-    <main class="container mt-4">
-      <section class="row">
-        <!-- Left Column -->
-        <article class="col-md-8">
-          <div class="card mb-4">
-            <h1>Patient Profile</h1>
-          </div>
-          <div class="card mb-4">
-            <h1>Assessments</h1>
-          </div>
-          <div class="card">
-            <h1>Patient History Timeline</h1>
-          </div>
-        </article>
+    <div class="container-fluid">
+        <div class="row">
+            
+            <aside class="sidebar bg-white">
+                <ul class="list-unstyled">
+                   
+                    <li class="p-3"><a href="#"><i class="fas fa-user"></i></a></li>
+                    <li class="p-3"><a href="#"><i class="fas fa-cog"></i></a></li>
+                </ul>
+            </aside>
 
-        <!-- Right Column -->
-        <article class="col-md-4">
-          <div class="card mb-4">
-            <h1>Current Medications</h1>
-          </div>
-          <div class="card mb-4">
-            <h1>Allergies</h1>
-          </div>
-          <div class="card mb-4">
-            <h1>Medi Summary</h1>
-          </div>
-        </article>
-      </section>
-    </main>
+            
+            <main class="col-md-10 col-sm-9">
+                <main class="container mt-4">
+                    <section class="row">
+                       
+                        <article class="col-md-6">
+                          <div class="card mb-4">
+                              <h1>Patient Profile</h1>
+                          </div>
+                      </article>
 
-    <footer class="footer mt-auto py-3 bg-light">
-      <div class="container text-center">
-        <span>Contact us: dev@MedAI.com | +966582123778</span>
-      </div>
+                      
+                      <article class="col-md-6">
+                          <div class="card mb-4">
+                              <h1>Assessments</h1>
+                          </div>
+                      </article>
+
+                     
+                      <article class="col-md-4">
+                          <div class="card mb-4">
+                              <h1>Current Medications</h1>
+                          </div>
+                      </article>
+
+                      
+                      <article class="col-md-4">
+                          <div class="card mb-4">
+                              <h1>Allergies</h1>
+                          </div>
+                      </article>
+
+                     
+                      <article class="col-md-4">
+                          <div class="card mb-4">
+                              <h1>Patient History Timeline</h1>
+                          </div>
+                      </article>
+
+                      
+                      <article class="col-md-4">
+                          <div class="card mb-4">
+                              <h1>Medi Summary</h1>
+                          </div>
+                      </article>
+                    </section>
+                </main>
+            </main>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-white">
+        <div class="container text-center">
+            <span>Contact us: dev@MedAI.com | +966582123778</span>
+        </div>
     </footer>
-  </body>
+</body>
 </html>
