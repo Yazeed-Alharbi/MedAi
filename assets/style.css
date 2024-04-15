@@ -197,9 +197,20 @@ h1 {
   padding: 20px;
   border-radius: 20px !important;
   border: 1px solid rgba(255, 255, 255, 0.155) !important;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
 .footer {
   margin-top: auto;
   background-color: var(--primary-color);
+}
+
+.card-icon {
+  font-size: 2em;
+  color: #6c757d;
+}
+.card-header {
+  background-color: transparent;
+  border-bottom: none;
 }
