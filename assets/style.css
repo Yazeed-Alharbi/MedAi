@@ -174,11 +174,43 @@ h1 {
   color: white;
   
 }
+
 .sidebar {
-  background-color: #fff;
-  padding-top: 20px; 
-  padding-bottom: 20px; 
+  font-size: 20px;
+  background-color:var(--primary-color);
+  padding: 60px 10px 0 10px;
+  height: 100vh; 
+  position: fixed; 
+  left: 0; 
+  top: 0; 
+  bottom: 0;
 }
+#signout-button{
+  margin-top: 80px;
+}
+#signout-button i{
+  color: rgb(227, 79, 79);
+}
+
+.main-header{
+  z-index: 1000;
+  background-color: var(--primary-color);
+}
+.main-content {
+  margin-left: 80px; 
+  padding: 20px; 
+}
+.card{
+  background-color: var(--primary-color) !important;
+  padding: 20px;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.155) !important;
+}
+
 .footer{
   margin-top: auto;
+  background-color: var(--primary-color);
 }
+
+
+

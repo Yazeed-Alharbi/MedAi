@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <img class="navbar-brand img-fluid" src="assets/MedAi_logo_dark.png" alt="logo" style="max-height: 50px">
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <img class="navbar-brand img-fluid" src="assets/MedAi_logo_dark.png" alt="logo" style="max-height: 60px">
             <div class="ml-auto">
                 <a href="login.html"><i class="fas fa-sign-out"></i></a>
             </div>
@@ -23,16 +23,20 @@
     <div class="container-fluid">
         <div class="row">
             
-            <aside class="sidebar bg-white">
-                <ul class="list-unstyled">
-                   
-                    <li class="p-3"><a href="#"><i class="fas fa-user"></i></a></li>
-                    <li class="p-3"><a href="#"><i class="fas fa-cog"></i></a></li>
-                </ul>
-            </aside>
+          <aside class="sidebar">
+            <ul class="list-unstyled">
+                <li class="p-3"><a href="#"><i class="fas fa-user"></i></a></li>
+                <li class="p-3"><a href="#"><i class="fas fa-cog"></i></a></li>
+                <!-- Logout icon -->
+                <li class="p-3" id="signout-button"><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
+            </ul>
+        </aside>
+        
+        
+        
 
             
-            <main class="col-md-10 col-sm-9">
+            <main class="col-md-10 col-sm-9 main-content">
                 <main class="container mt-4">
                     <section class="row">
                        
@@ -82,7 +86,7 @@
         </div>
     </div>
 
-    <footer class="footer mt-auto py-3 bg-white">
+    <footer class="footer mt-auto py-3">
         <div class="container text-center">
             <span>Contact us: dev@MedAI.com | +966582123778</span>
         </div>
