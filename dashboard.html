@@ -1,95 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Medical Dashboard</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
     <header class="main-header">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <img class="navbar-brand img-fluid" src="assets/MedAi_logo_dark.png" alt="logo" style="max-height: 60px">
-            <div class="ml-auto">
-                <a href="login.html"><i class="fas fa-sign-out"></i></a>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <img
+          class="navbar-brand img-fluid"
+          src="assets/MedAi_logo_dark.png"
+          alt="logo"
+          style="max-height: 60px"
+        />
+        <div class="ml-auto">
+          <a href="login.html"><i class="fas fa-sign-out"></i></a>
+        </div>
+      </nav>
     </header>
 
     <div class="container-fluid">
-        <div class="row">
-            
-          <aside class="sidebar">
-            <ul class="list-unstyled">
-                <li class="p-3"><a href="#"><i class="fas fa-user"></i></a></li>
-                <li class="p-3"><a href="#"><i class="fas fa-cog"></i></a></li>
-                <!-- Logout icon -->
-                <li class="p-3" id="signout-button"><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
-            </ul>
+      <div class="row">
+        <aside class="sidebar">
+          <ul class="list-unstyled">
+            <li class="p-3">
+              <a href="#"><i class="fas fa-user"></i></a>
+            </li>
+            <li class="p-3">
+              <a href="#"><i class="fas fa-cog"></i></a>
+            </li>
+            <!-- Logout icon -->
+          </ul>
+          <ul class="list-unstyled">
+            <!-- This is a new UL for the logout item -->
+            <li class="p-3" id="signout-button">
+              <a href="#"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+          </ul>
         </aside>
-        
-        
-        
 
-            
-            <main class="col-md-10 col-sm-9 main-content">
-                <main class="container mt-4">
-                    <section class="row">
-                       
-                        <article class="col-md-6">
-                          <div class="card mb-4">
-                              <h1>Patient Profile</h1>
-                          </div>
-                      </article>
+        <main class="col-md-10 col-sm-9 main-content">
+          <main class="container mt-4">
+            <section class="row">
+              <article class="col-md-6">
+                <div class="card mb-4">
+                  <h3>Patient Profile</h3>
+                </div>
+              </article>
 
-                      
-                      <article class="col-md-6">
-                          <div class="card mb-4">
-                              <h1>Assessments</h1>
-                          </div>
-                      </article>
+              <article class="col-md-6">
+                <div class="card mb-4">
+                  <h3>Assessments</h3>
+                </div>
+              </article>
 
-                     
-                      <article class="col-md-4">
-                          <div class="card mb-4">
-                              <h1>Current Medications</h1>
-                          </div>
-                      </article>
+              <article class="col-md-4">
+                <div class="card mb-4">
+                  <h3>Current Medications</h3>
+                </div>
+              </article>
 
-                      
-                      <article class="col-md-4">
-                          <div class="card mb-4">
-                              <h1>Allergies</h1>
-                          </div>
-                      </article>
+              <article class="col-md-4">
+                <div class="card mb-4">
+                  <h3>Allergies</h3>
+                </div>
+              </article>
 
-                     
-                      <article class="col-md-4">
-                          <div class="card mb-4">
-                              <h1>Patient History Timeline</h1>
-                          </div>
-                      </article>
+              <article class="col-md-4">
+                <div class="card mb-4">
+                  <h3>Patient History Timeline</h3>
+                </div>
+              </article>
 
-                      
-                      <article class="col-md-4">
-                          <div class="card mb-4">
-                              <h1>Medi Summary</h1>
-                          </div>
-                      </article>
-                    </section>
-                </main>
-            </main>
-        </div>
+              <article class="col-md-4">
+                <div class="card mb-4">
+                  <h3>Medi Summary</h3>
+                </div>
+              </article>
+            </section>
+          </main>
+        </main>
+      </div>
     </div>
 
     <footer class="footer mt-auto py-3">
-        <div class="container text-center">
-            <span>Contact us: dev@MedAI.com | +966582123778</span>
-        </div>
+      <div class="container text-center">
+        <span>Contact us: dev@MedAI.com | +966582123778</span>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
