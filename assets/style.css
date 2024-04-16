@@ -164,10 +164,9 @@ h1 {
 }
 
 .sidebar {
-  
   font-size: 20px;
   background-color: var(--primary-color);
-  
+
   height: 100vh;
   position: fixed;
   left: 0;
@@ -184,12 +183,11 @@ h1 {
   margin: 0;
   text-align: center; /* Center the list items horizontally */
 }
-.sidebar img{
+.sidebar img {
   margin: auto;
 }
 
-
-#signout-button  {
+#signout-button {
   margin-bottom: 40px;
 }
 #signout-button i {
@@ -200,7 +198,7 @@ h1 {
   background-color: var(--primary-color);
 }
 .main-content {
-  margin-left: 80px;
+  margin-left: 120px !important;
   padding: 20px;
 }
 .card {
