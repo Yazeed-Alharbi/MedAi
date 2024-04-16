@@ -163,9 +163,10 @@ h1 {
 }
 
 .btn {
-  background-color: var(--btn-primary-color) !important;
-  color: var(--btn-primary-color);
+  background-color: var(--secondary-color) !important;
+  color: white;
 }
+
 
 .sidebar {
   font-size: 20px;
