@@ -20,11 +20,20 @@
   <body>
     <header class="main-header">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="ml-auto">
-          <a href="login.html"><i class="fas fa-sign-out"></i></a>
+        <div class="container">
+          <div class="mx-auto"> 
+            <label for="patient-listbox">Patient: </label>
+            <select id="patient-listbox" class="form-select form-select-lg " >
+              <option selected value="0">Select a patient</option>
+              <option value="1">1 - Scott Webb</option>
+              <option value="2">2 - Rachel Frederick</option>
+              <option value="3">3 - Eric Kline</option>
+            </select>
+          </div>
         </div>
       </nav>
     </header>
+    
 
     <div class="container-fluid">
       <div class="row">

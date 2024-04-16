@@ -199,7 +199,12 @@ h1 {
 
 .main-header {
   background-color: var(--primary-color);
+  padding: 10px 0 10px 120px !important;
+  
+  align-items: center;
+  
 }
+
 .main-content {
   margin-left: 120px !important;
   padding: 20px;
@@ -225,4 +230,13 @@ h1 {
 .card-header {
   background-color: transparent;
   border-bottom: none;
+}
+#patient-listbox{
+  width: 40vw;
+  text-align: center;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  border-color: var(---text-color);
+  height: 35px;
+  
 }
