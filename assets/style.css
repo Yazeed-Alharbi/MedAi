@@ -3,12 +3,14 @@
   --secondary-color: #423b55;
   --text-color: #000000;
   --page-background-color: #f6f5fb;
+  --btn-primary-color: #f0f0f0;
 }
 .dark-mode {
   --primary-color: #423b55;
   --secondary-color: #684ad2;
   --text-color: #ffffff;
   --page-background-color: #2c283a;
+  --btn-primary-color: #423b55;
 }
 * {
   color: var(--text-color);
@@ -159,8 +161,8 @@ h1 {
 }
 
 .btn {
-  background-color: var(--secondary-color);
-  color: white;
+  background-color: var(--btn-primary-color) !important;
+  color: var(--btn-primary-color);
 }
 
 .sidebar {
@@ -190,6 +192,7 @@ h1 {
 #signout-button {
   margin-bottom: 40px;
 }
+
 #signout-button i {
   color: rgb(227, 79, 79);
 }
