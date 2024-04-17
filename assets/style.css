@@ -276,3 +276,7 @@ h1 {
   background-color: var(--secondary-color) !important;
   color: white;
 }
+
+.resizeable-text {
+  font-size: clamp(16px, 2vw, 26px); /* Adjusts the font size based on the viewport width */
+}
