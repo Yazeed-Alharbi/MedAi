@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website Settings</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="assets/app.js"></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        
+        <div class="ml-auto">
+          <a href="login.html"><i class="fas fa-sign-out"></i></a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="sidebar">
+          <ul class="list-unstyled">
+            <li class="p-3">
+              <a href="#"><img
+                class="navbar-brand img-fluid"
+                src="assets/logo_no_text.png"
+                alt="logo"
+                style="max-height: 60px"
+              /></a>
+            </li>
+            <li class="p-3">
+              <a href="#"><i class="fas fa-user"></i></a>
+            </li>
+            <li class="p-3">
+              <a href="#"><i class="fas fa-cog"></i></a>
+            </li>
+            <!-- Logout icon -->
+          </ul>
+          <ul class="list-unstyled">
+            <!-- This is a new UL for the logout item -->
+            <li class="p-3" id="signout-button">
+              <a href="#"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+          </ul>
+        </aside>
+
+        <main class="col-md-10 col-sm-9 main-content container mt-4">
+          <section class="row">
+            <article class="col-lg-12 pr-5 pl-5">
+              <div class="ml-2 bg-transparent">
+                <h3>Settings</h3>
+              </div>
+              <div class="col-lg-12">
+                <div class="row ">
+                  <div class="card col-lg-12 h-100 pb-0 pt-0">
+                    <div class="row pb-3 pt-3 border-bottom">
+                      <div class="col-md-1 d-flex justify-content-center p-3">
+                          <img
+                            class="img-fluid"
+                            src="assets/dark_mode_bulb_light.png"
+                            alt="dark mode icon"
+                            style="max-height: 20px"
+                          />
+                      </div>
+                      <div class="col-md-10 mt-2">
+                        <h3 class="p-0 mb-0">Dark mode</h3>
+                      </div>
+                      <div class="col-md-1 d-flex justify-content-center pt-3">
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="darkModeSwitch">
+                          <label class="custom-control-label" for="darkModeSwitch"></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row pb-3 pt-3 border-bottom">
+                      <div class="col-md-1 d-flex justify-content-center p-3">
+                        <img
+                            class="img-fluid"
+                            src="assets/notification_icon_light.png"
+                            alt="Notication Icon"
+                            style="max-height: 20px"
+                          />
+                      </div>
+                      <div class="col-md-10 mt-2">
+                        <h3>Notification</h3>
+                      </div>
+                      <div class="col-md-1 d-flex justify-content-center pt-3">
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="notificationSwitch" style="min-width: 30px;">
+                          <label class="custom-control-label" for="notificationSwitch"></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row pb-3 pt-3 ">
+                      <div class="col-md-1 d-flex justify-content-center p-3">
+                        <img
+                            class="img-fluid"
+                            src="assets/about_us_icon_light.png"
+                            alt="About us icon"
+                            style="max-height: 20px"
+                          />
+                      </div>
+                      <div class="col-md-11 mt-2">
+                        <h3><a href="#">About us</a></h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+              
+
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <footer class="footer mt-auto py-3">
+      <div class="container text-center">
+        <span>Contact us: dev@MedAI.com | +966582123778</span>
+      </div>
+    </footer>
+  </body>
+</html>

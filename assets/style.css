@@ -225,3 +225,9 @@ h1 {
   background-color: transparent;
   border-bottom: none;
 }
+
+/* Style the switch handle when the switch is checked */
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: var(--secondary-color) !important;  /* purple background for checked state */
+  border-color: var(--secondary-color) !important;
+}
