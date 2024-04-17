@@ -245,6 +245,7 @@ h1 {
   
 }
 .rounded-border{
+  
   border: 1px solid rgba(152, 152, 152, 0.394) !important;
   border-radius: 20px;
 }
