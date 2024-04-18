@@ -1,7 +1,37 @@
-# MedAi
+# MedAi: A Smart Medical Records Platform
 
+## Overview
 
-<img width="1006" alt="image" src="https://github.com/Yazeed-Alharbi/MedAi/assets/94597714/5b6f0dc2-6aa8-4099-afc1-9059e2bd8dc7">
+**MedAi** is a web-based application designed to streamline the process of accessing and managing patient medical records for healthcare professionals. Developed as a project for the **SWE 363 course (Web Engineering and Development)** at King Fahd University of Petroleum and Minerals (KFUPM), MedAi aims to provide a comprehensive and clear view of a patient's medical history, facilitating quicker and more informed medical decisions by doctors.
 
-MedAi is our project for the SWE 363 course (Web Engineering and Development) at KFUPM. It is a smart platform designed to quickly provide doctors with a comprehensive and complete look at a patient's health record. The main motivation behind MedAi is to eliminate the need for patients to provide their medical history and details when they visit a new healthcare facility. In addition, this motivation extends to presenting the patient information in a clear and concise manner to help doctors in making informed decisions.
+## Features
 
+- **Dashboard View:** Access a centralized dashboard that displays detailed patient records, allowing healthcare professionals to quickly assess patient history, ongoing treatments, and medical data.
+- **User Authentication:** Secure login system ensures that access to medical records is restricted to authorized personnel only, protecting patient confidentiality.
+- **Data Visualization:** Leverage built-in tools to visualize medical data through charts and graphs, aiding in the analysis and understanding of patient health trends.
+- **Chatbot:** MedAi provides a smart chatbot that assists users in finding information about patients.
+
+## Repository Content
+
+- **dashboard.html:** The main interface for viewing and interacting with the medical records dashboard.
+- **login.html:** Manages the authentication process for system access.
+- **settings.html:** Provides options for customizing and configuring application settings.
+
+## Technology Stack
+
+- **Frontend:** HTML, CSS (Bootstrap 4), JavaScript
+- **Backend and Server:** Firebase
+
+## Installation
+
+To set up **MedAi** for development or testing, follow these steps:
+
+1. Clone the repository:
+`git clone <https://github.com/Yazeed-Alharbi/MedAi.git`>
+2. Navigate to the project directory:
+`cd MedAi`
+3. Open the dashboard.html, login.html, or settings.html in your browser to start interacting with the application.
+
+## Usage
+
+After installation, you can log in through the login.html page using the credentials provided (or as set up in your environment). Once authenticated, you will be redirected to the dashboard.html where you can view and manage patient records.
