@@ -31,7 +31,3 @@ To set up **MedAi** for development or testing, follow these steps:
 2. Navigate to the project directory:
 `cd MedAi`
 3. Open the dashboard.html, login.html, or settings.html in your browser to start interacting with the application.
-
-## Usage
-
-After installation, you can log in through the login.html page using the credentials provided (or as set up in your environment). Once authenticated, you will be redirected to the dashboard.html where you can view and manage patient records.
