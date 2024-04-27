@@ -13,24 +13,24 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isDarkMode) {
       document.body.classList.toggle("dark-mode", isDarkMode);
       if (window.location.pathname.includes("/login.html")) {
-        colorModeIcon.src = "assets/lightmode_icon.png";
-        loginBackgroundLogo.src = "assets/MedAi_logo_light.png";
+        colorModeIcon.src = "images/lightmode_icon.png";
+        loginBackgroundLogo.src = "images/MedAi_logo_light.png";
       }
       if (window.location.pathname.includes("/settings.html")) {
-        settingsBulbIcon.src = "assets/bulb_dark.png";
-        settingsAboutUsIcon.src = "assets/about_us_icon_dark.png";
-        settingsNotificationIcon.src = "assets/notification_icon_dark.png";
+        settingsBulbIcon.src = "images/bulb_dark.png";
+        settingsAboutUsIcon.src = "images/about_us_icon_dark.png";
+        settingsNotificationIcon.src = "images/notification_icon_dark.png";
         settingsDarkModeSwitch.checked = true;
       }
     } else {
       if (window.location.pathname.includes("/login.html")) {
-        colorModeIcon.src = "assets/darkmode_icon.png";
-        loginBackgroundLogo.src = "assets/MedAi_logo_dark.png";
+        colorModeIcon.src = "images/darkmode_icon.png";
+        loginBackgroundLogo.src = "images/MedAi_logo_dark.png";
       }
       if (window.location.pathname.includes("/settings.html")) {
-        settingsBulbIcon.src = "assets/bulb_light.png";
-        settingsAboutUsIcon.src = "assets/about_us_icon_light.png";
-        settingsNotificationIcon.src = "assets/notification_icon_light.png";
+        settingsBulbIcon.src = "images/bulb_light.png";
+        settingsAboutUsIcon.src = "images/about_us_icon_light.png";
+        settingsNotificationIcon.src = "images/notification_icon_light.png";
         settingsDarkModeSwitch.checked = false;
       }
       document.body.classList.toggle("dark-mode", isDarkMode);
