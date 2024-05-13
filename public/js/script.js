@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let settingsBulbIcon = document.getElementById("bulb-icon");
   let settingsAboutUsIcon = document.getElementById("about-us-icon");
   let settingsNotificationIcon = document.getElementById("notification-icon");
+  let dashboardPage = document.getElementsByClassName("dashboard-body")[0]
 
   function darkModeSetter() {
     let isDarkMode = localStorage.getItem("darkMode") === "true";
@@ -76,5 +77,29 @@ document.addEventListener("DOMContentLoaded", function () {
         showPasswordToggle.classList.add("fa-eye-slash");
       }
     });
+  }
+  if (dashboardPage){
+    document.getElementById('patient-listbox').addEventListener('change', function() {
+      const selectedPatientId = this.value;
+      
+      document.cookie = `savedPatientID=${selectedPatientId}; path=/`;
+      
+      window.location.href = `/dashboard/${selectedPatientId}`;
+  });
+  
+  const savedPatientID = getCookie('savedPatientID');
+
+  
+  if (savedPatientID) {
+      const patientListbox = document.getElementById('patient-listbox');
+      patientListbox.value = savedPatientID;
+  }
+
+  
+  function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+  }
   }
 });

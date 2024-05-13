@@ -4,7 +4,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Medical Dashboard</title>
-        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="/css/style.css"/>
         <!-- Bootstrap CSS -->
         <link
       rel="stylesheet"
@@ -15,7 +15,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
 />
-        <script src="js/script.js"></script>
+        <script src="/js/script.js"></script>
     </head>
     <body class="dashboard-body">
         <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
@@ -30,11 +30,11 @@
                     <div class="mx-auto">
                         <label for="patient-listbox">Patient: </label>
                         <select id="patient-listbox" class="form-select form-select-lg">
-                            <option selected value="0">Select a patient</option>
-                            <option value="1">1 - Scott Webb</option>
-                            <option value="2">2 - Rachel Frederick</option>
-                            <option value="3">3 - Eric Kline</option>
-                        </select>
+  {% for patient in patients %}
+    <option value="{{ patient.patient_id }}">{{ patient.patient_id }} - {{ patient.name }}</option>
+  {% endfor %}
+</select>
+
                     </div>
                 </div>
             </nav>
@@ -48,7 +48,7 @@
                             <a href="#"
                 ><img
                   class="navbar-brand img-fluid"
-                  src="images/logo_no_text.png"
+                  src="/images/logo_no_text.png"
                   alt="logo"
                   style="max-height: 60px"
 /></a>
@@ -86,7 +86,7 @@
                     class="col-md-4 col-lg-3 d-flex justify-content-center align-items-center mr-3"
                   >
                                         <img
-                      src="images/profile_image.webp"
+                      src="/images/profile_image.webp"
                       alt="Profile Image"
                       class="rounded-circle m-3"
                       style="max-width: 100px; height: auto"
@@ -99,16 +99,16 @@
                       class="card-title resizeable-text"
                       style="overflow-wrap: normal"
                     >
-                      Waleed Almutairi
+                      {{patient.name}}
                     </h4>
                                         <p class="card-text" style="overflow-wrap: normal">
-                                            <strong>Age:</strong> 21 Years old
+                                            <strong>Age:</strong> {{patient.age}}
                     </p>
                                         <p class="card-text" style="overflow-wrap: normal">
                                             <strong>Place of Birth:</strong> Riyadh
                     </p>
                                         <p class="card-text" style="overflow-wrap: normal">
-                                            <strong>Blood Type:</strong> O-
+                                            <strong>Blood Type:</strong> {{patient.blood_type}}
                     </p>
                                     </div>
                                 </div>
@@ -135,27 +135,14 @@
                                 <h3>Allergies</h3>
                             </div>
                             <div class="card col-lg-12 mb-4">
+                               {% for allergy in patient.allergies %}
+                               
                                 <div class="mb-2">
-                                    <div
-                    class="card-body rounded-border d-flex align-items-center"
-                  >
-                                        <h5 class="card-title">Penicillin</h5>
+                                    <div class="card-body rounded-border d-flex align-items-center">
+                                        <h5 class="card-title">{{ allergy }}</h5>
                                     </div>
                                 </div>
-                                <div class="mb-2">
-                                    <div
-                    class="card-body rounded-border d-flex align-items-center"
-                  >
-                                        <h5 class="card-title">Sulfa Drugs</h5>
-                                    </div>
-                                </div>
-                                <div class="mb-2">
-                                    <div
-                    class="card-body rounded-border d-flex align-items-center"
-                  >
-                                        <h5 class="card-title">Secretoglobins</h5>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </article>
 
@@ -177,7 +164,7 @@
                                             </div>
                                             <div class="mr-2">
                                                 <h5 class="card-title">Current Diagnosis</h5>
-                                                <p class="card-text">Suspected Herniated disk</p>
+                                                <p class="card-text">{{ patient.Current_Diagnosis}}</p>
                                             </div>
                                             <div class="ml-auto">
                                                 <a href="#" class="btn">Show more</a>
@@ -196,7 +183,7 @@
                                                 <p class="card-text">Suspected Herniated disk</p>
                                             </div>
                                             <div class="ml-auto">
-                                                <a href="#" class="btn">23</a>
+                                                <a href="#" class="btn">{{ patient.BMI.toFixed(2) }}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -227,7 +214,7 @@
                                             </div>
                                             <div class="mr-2">
                                                 <h5 class="card-title">Chronic Diseases</h5>
-                                                <p class="card-text">None</p>
+                                                <p class="card-text">{{patient.Current_Disease}}</p>
                                             </div>
                                             <div class="ml-auto">
                                                 <a href="#" class="btn">Show more</a>
@@ -245,7 +232,7 @@
                                             </div>
                                             <div class="mr-2">
                                                 <h5 class="card-title">Mental Health</h5>
-                                                <p class="card-text">ADHD</p>
+                                                <p class="card-text">{{patient.Mental_Health_Condition}}</p>
                                             </div>
                                             <div class="ml-auto">
                                                 <a href="#" class="btn">Show more</a>
@@ -288,7 +275,7 @@
                                     <div class="col-lg-6">
                                         <div class="card-body">
                                             <p class="card-text">
-                                                <strong>Date</strong>: 2020-07-02 10:48:35
+                                                <strong>Date</strong>: {{patient.last_appointment_date}}
                       </p>
                                             <p class="card-text">
                                                 <strong>Institution</strong>: Dhahran Health Center
