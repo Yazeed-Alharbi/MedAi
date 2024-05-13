@@ -22,6 +22,9 @@ app.get("/", async function (req, res) {
 app.get("/dashboard", async function (req, res) {
   res.render("dashboard.njk");
 });
+app.get("/settings", async function (req, res) {
+  res.render("settings.njk");
+});
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
