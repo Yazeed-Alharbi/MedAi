@@ -14,7 +14,7 @@ const patientSchema = new mongoose.Schema({
     required: true,
   },
   medical_conditions: {
-    type: Array,
+    type: [String],
     default: [],
   },
   medications: {

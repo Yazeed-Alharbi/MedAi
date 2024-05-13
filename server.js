@@ -36,7 +36,7 @@ app.get("/dashboard", async function (req, res) {
   try {
     // Fetch the first patient
     const patient = await Patient.findOne(); // Modify as needed to fetch specific patient
-    console.log(patient.medications);
+    console.log(patient.medications[0]);
     if (!patient) {
       return res.status(404).send("Patient not found");
     }
