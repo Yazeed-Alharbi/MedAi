@@ -241,16 +241,44 @@ h1 {
   background-color: var(--secondary-color) !important;  /* purple background for checked state */
   border-color: var(--secondary-color) !important;
 }
-#patient-listbox{
-  width: 40vw;
+.chosen-container{
+  background-color: var(--primary-color) !important;
+  width: 40vw !important;
   text-align: center;
-  background-color: var(--primary-color);
-  border-radius: 5px;
-  border-color: var(---text-color);
-  height: 35px;
+  border-radius: 5px !important;
+  border-color: var(--text-color) !important;
+  height: 35px !important;
+  
   
 }
+#patient-listbox{
+  background-color: var(--primary-color) !important;
+}
+/* Target the Chosen container */
+.chosen-container .chosen-single {
+  background-color: var(--primary-color) !important; /* Set background color */
+}
+
+.chosen-container .chosen-drop {
+  background-color: var(--primary-color) !important; /* Set dropdown background color */
+}
+/* Target the Chosen select box */
+
+.chosen-container-single .chosen-single div b {
+  background-color: var(--primary-color) !important; /* Set arrow color */
+}
+.chosen-container-active.chosen-with-drop .chosen-single,
+.chosen-container-single .chosen-single {
+    background-image: linear-gradient(var(--primary-color) 20%,var(--primary-color) 50%) !important; /* here is the block */
+}
+.chosen-container .chosen-results li.active-result:hover,
+.chosen-container .chosen-results li.highlighted {
+  background-image: linear-gradient(var(--secondary-color) 20%,var(--secondary-color) 50%) !important; /* Blue background for hover */
+    /* White text color on hover */
+}
+
 .rounded-border{
+  
   
   border: 1px solid rgba(152, 152, 152, 0.394) !important;
   border-radius: 20px;

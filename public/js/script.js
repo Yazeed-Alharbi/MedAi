@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (document.body.classList.contains("settings-body")) {
         settingsBulbIcon.src = "images/bulb_dark.png";
         settingsAboutUsIcon.src = "images/about_us_icon_dark.png";
-        settingsNotificationIcon.src = "images/notification_icon_dark.png";
+        
         settingsDarkModeSwitch.checked = true;
       }
     } else {
@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (document.body.classList.contains("settings-body")) {
         settingsBulbIcon.src = "images/bulb_light.png";
         settingsAboutUsIcon.src = "images/about_us_icon_light.png";
-        settingsNotificationIcon.src = "images/notification_icon_light.png";
         settingsDarkModeSwitch.checked = false;
       }
       document.body.classList.toggle("dark-mode", isDarkMode);
@@ -80,12 +79,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if (dashboardPage){
 
+    $('#patient-listbox').chosen();
+
     document.getElementById('patient-listbox').addEventListener('change', function() {
       const selectedPatientId = this.value;
       
       document.cookie = `savedPatientID=${selectedPatientId}; path=/`;
       
       window.location.href = `/dashboard/${selectedPatientId}`;
+     
   });
   
   const savedPatientID = getCookie('savedPatientID');
