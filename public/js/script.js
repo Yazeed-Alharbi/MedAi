@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   if (dashboardPage){
+
     document.getElementById('patient-listbox').addEventListener('change', function() {
       const selectedPatientId = this.value;
       
@@ -101,5 +102,20 @@ document.addEventListener("DOMContentLoaded", function () {
       const parts = value.split(`; ${name}=`);
       if (parts.length === 2) return parts.pop().split(';').shift();
   }
+  const showMoreButtons = document.querySelectorAll('.show-more');
+  showMoreButtons.forEach(button => {
+      button.addEventListener('click', function(event) {
+          event.preventDefault();
+          const additionalConditions = button.parentElement.previousElementSibling.querySelector('.additional-conditions');
+            if (additionalConditions.style.display === 'none' || additionalConditions.style.display === '') {
+                additionalConditions.style.display = 'block';
+                button.textContent = 'Show less';
+            } else {
+                additionalConditions.style.display = 'none';
+                button.textContent = 'Show more';
+            }
+      });
+  });
+
   }
 });

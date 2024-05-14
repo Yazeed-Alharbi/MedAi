@@ -154,21 +154,20 @@
                             <div class="card col-lg-12 mb-4">
                                 <div class="row">
                                     <div class="col-lg-6 mb-4">
-                                        <div
-                      class="card-body rounded-border d-flex align-items-center"
-                    >
+                                        <div class="card-body rounded-border d-flex align-items-center">
                                             <div class="mr-2">
-                                                <i
-                          class="fas fa-notes-medical card-icon icon-rounded fa-lg"
-                        ></i>
+                                                <i class="fas fa-band-aid icon-rounded fa-lg"></i>
                                             </div>
                                             <div class="mr-2">
                                                 <h5 class="card-title">Current Diagnosis</h5>
-                                                <p class="card-text">{{ patient.Current_Diagnosis}}</p>
+                                                <p class="card-text">{{ patient.Current_Diagnosis }}</p>
+                                                <div class="additional-conditions" style="display: none;">
+                                                   
+                                                        
+                                                  
+                                                </div>
                                             </div>
-                                            <div class="ml-auto">
-                                                <a href="#" class="btn">Show more</a>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mb-4">
@@ -193,76 +192,112 @@
                                                 {% endif %}
                                             </div>
                                             <div class="ml-auto">
-                                                <a href="#" class="btn">{{ patient.BMI.toFixed(2) }}</a>
+                                                <span class="btn">{{ patient.BMI.toFixed(2) }}</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6 mb-4">
-                                        <div
-                      class="card-body rounded-border d-flex align-items-center"
-                    >
+                                        <div class="card-body rounded-border d-flex align-items-center">
                                             <div class="mr-2">
-                                                <i class="fas fa-stethoscope icon-rounded fa-lg"></i>
+                                                <i class="fas fa-band-aid icon-rounded fa-lg"></i>
                                             </div>
                                             <div class="mr-2">
                                                 <h5 class="card-title">Past Surgeries</h5>
-                                                <p class="card-text">{{patient.past_surgeries[0]}}</p>
+                                                <p class="card-text">{{ patient.past_surgeries[0] }}</p>
+                                                <div class="additional-conditions" style="display: none;">
+                                                    {% set count = 0 %}
+                                                    {% for condition in patient.past_surgeries %}
+                                                        {% if count > 0 %}
+                                                            <p class="card-text">{{ condition }}</p>
+                                                        {% endif %}
+                                                        {% set count = count + 1 %}
+                                                    {% endfor %}
+                                                </div>
                                             </div>
+                                            {% if patient.past_surgeries.length > 1 %}
                                             <div class="ml-auto">
-                                                <a href="#" class="btn">Show more</a>
+                                                <a href="#" class="btn show-more">Show more</a>
                                             </div>
+                                            {% endif %}
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 mb-4">
-                                        <div
-                      class="card-body rounded-border d-flex align-items-center"
-                    >
+                                   <div class="col-lg-6 mb-4">
+                                        <div class="card-body rounded-border d-flex align-items-center">
                                             <div class="mr-2">
                                                 <i class="fas fa-band-aid icon-rounded fa-lg"></i>
                                             </div>
                                             <div class="mr-2">
                                                 <h5 class="card-title">Chronic Diseases</h5>
-                                                <p class="card-text">{{patient.medical_conditions[0]}}</p>
+                                                <p class="card-text">{{ patient.medical_conditions[0] }}</p>
+                                                <div class="additional-conditions" style="display: none;">
+                                                    {% set count = 0 %}
+                                                    {% for condition in patient.medical_conditions %}
+                                                        {% if count > 0 %}
+                                                            <p class="card-text">{{ condition }}</p>
+                                                        {% endif %}
+                                                        {% set count = count + 1 %}
+                                                    {% endfor %}
+                                                </div>
                                             </div>
+                                            {% if patient.medical_conditions.length > 1 %}
                                             <div class="ml-auto">
-                                                <a href="#" class="btn">Show more</a>
+                                                <a href="#" class="btn show-more">Show more</a>
                                             </div>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6 mb-4">
-                                        <div
-                      class="card-body rounded-border d-flex align-items-center"
-                    >
+                                        <div class="card-body rounded-border d-flex align-items-center">
                                             <div class="mr-2">
-                                                <i class="fas fa-brain icon-rounded fa-lg"></i>
+                                                <i class="fas fa-band-aid icon-rounded fa-lg"></i>
                                             </div>
                                             <div class="mr-2">
                                                 <h5 class="card-title">Mental Health</h5>
-                                                <p class="card-text">{{patient.Mental_Health_Condition[0]}}</p>
+                                                <p class="card-text">{{ patient.Mental_Health_Condition[0] }}</p>
+                                                <div class="additional-conditions" style="display: none;">
+                                                    {% set count = 0 %}
+                                                    {% for condition in patient.Mental_Health_Condition %}
+                                                        {% if count > 0 %}
+                                                            <p class="card-text">{{ condition }}</p>
+                                                        {% endif %}
+                                                        {% set count = count + 1 %}
+                                                    {% endfor %}
+                                                </div>
                                             </div>
+                                            {% if patient.Mental_Health_Condition.length > 1 %}
                                             <div class="ml-auto">
-                                                <a href="#" class="btn">Show more</a>
+                                                <a href="#" class="btn show-more">Show more</a>
                                             </div>
+                                            {% endif %}
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mb-4">
-                                        <div
-                      class="card-body rounded-border d-flex align-items-center"
-                    >
+                                       <div class="card-body rounded-border d-flex align-items-center">
                                             <div class="mr-2">
-                                                <i class="fas fa-flask icon-rounded fa-lg"></i>
+                                                <i class="fas fa-band-aid icon-rounded fa-lg"></i>
                                             </div>
                                             <div class="mr-2">
                                                 <h5 class="card-title">Lab Tests</h5>
-                                                <p class="card-text">{{patient.lab_tests[0]}}</p>
+                                                <p class="card-text">{{ patient.lab_tests[0] }}</p>
+                                                <div class="additional-conditions" style="display: none;">
+                                                    {% set count = 0 %}
+                                                    {% for condition in patient.lab_tests %}
+                                                        {% if count > 0 %}
+                                                            <p class="card-text">{{ condition }}</p>
+                                                        {% endif %}
+                                                        {% set count = count + 1 %}
+                                                    {% endfor %}
+                                                </div>
                                             </div>
+                                            {% if patient.lab_tests.length > 1 %}
                                             <div class="ml-auto">
-                                                <a href="#" class="btn">Show more</a>
+                                                <a href="#" class="btn show-more">Show more</a>
                                             </div>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
