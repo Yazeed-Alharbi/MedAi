@@ -81,13 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     $('#patient-listbox').chosen();
 
-    document.getElementById('patient-listbox').addEventListener('change', function() {
-      const selectedPatientId = this.value;
-      
+    $('#patient-listbox').closest('.mx-auto').on('change', '#patient-listbox', function() {
+      const selectedPatientId = $(this).val();
       document.cookie = `savedPatientID=${selectedPatientId}; path=/`;
-      
       window.location.href = `/dashboard/${selectedPatientId}`;
-     
   });
   
   const savedPatientID = getCookie('savedPatientID');
@@ -95,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   if (savedPatientID) {
       const patientListbox = document.getElementById('patient-listbox');
-      patientListbox.value = savedPatientID;
+      $('#patient-listbox').val(savedPatientID).trigger('chosen:updated');
   }
 
   
