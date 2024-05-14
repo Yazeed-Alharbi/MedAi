@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }).catch(err=>{console.log(err)})
     }
   }
+  let dashboardPage = document.getElementsByClassName("dashboard-body")[0]
+
   function darkModeSetter() {
     let isDarkMode = localStorage.getItem("darkMode") === "true";
     if (isDarkMode) {
@@ -98,6 +100,28 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  console.log("in settings-body222")
+  if (dashboardPage){
+    document.getElementById('patient-listbox').addEventListener('change', function() {
+      const selectedPatientId = this.value;
+      
+      document.cookie = `savedPatientID=${selectedPatientId}; path=/`;
+      
+      window.location.href = `/dashboard/${selectedPatientId}`;
+  });
   
+  const savedPatientID = getCookie('savedPatientID');
+
+  
+  if (savedPatientID) {
+      const patientListbox = document.getElementById('patient-listbox');
+      patientListbox.value = savedPatientID;
+  }
+
+  
+  function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+  }
 });
