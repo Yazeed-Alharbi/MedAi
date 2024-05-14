@@ -39,6 +39,7 @@
                 </div>
             </nav>
         </header>
+        
 
         <div class="container-fluid">
             <div class="row">
@@ -341,6 +342,130 @@
                             </div>
                         </article>
                     </section>
+                    <button type="button" class="btn btn-primary" onclick="openPrintWindow();">Print Patient Report</button>
+                    <script>
+                        function getCookie() {
+                            // Split document.cookie on semicolons into an array
+                                const cookie = document.cookie;
+        
+                            // Loop through the array elements
+        
+                            const [cookieName, cookieValue] = cookie.split('=');
+                            // If the cookie's name matches the provided name, return its value
+                            if (cookieName === "savedPatientID") {
+                                return decodeURIComponent(cookieValue);
+                            }   
+        
+                            return null;
+                            }
+                            async function openPrintWindow(){
+                            let url = "/patients/"+getCookie();
+                            let response = await fetch(url);
+                            const pat = await response.json();
+                            const patientData = {
+      "name": pat.name,
+      "gender": pat.gender,
+      "medical_conditions": pat.medical_conditions,
+      "medications": pat.medications,
+      "allergies": pat.allergies,
+      "blood_type": pat.blood_type,
+      "BMI": pat.BMI,
+      "age": pat.age,
+      "current_disease": pat.current_disease,
+      "mental_health_conditions": pat.mental_health_conditions,
+      "current_diagnosis": pat.current_diagnosis,
+      "last_appointment": pat.last_appointment,
+      "place_of_birth": pat.place_of_birth,
+      "past_surgeries": pat.past_surgeries,
+      "lab_tests": pat.lab_tests
+  };
+
+  const printWindow = window.open('', '_blank', 'width=1200,height=600');
+  printWindow.document.write(`
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Medical Report of Mary Harris</title>
+          <style>
+              body { font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; padding: 20px; background: #fff; color: #333; }
+              .container { max-width: 210mm; margin: auto; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 20px; }
+              .header { text-align: center; margin-bottom: 20px; }
+              .header h1 { color: linear-gradient(to right, #57a9d2, #f8077e);; margin-bottom: 0.5em; }
+              .header p { margin-top: 0; font-size: 16px; }
+              .logo { position: absolute; right: 80px; top: 50px; width: 100px; } /* Logo positioning */
+              .section { margin-bottom: 20px; }
+              h2 { color: #57a9d2; font-size: 18px; border-bottom: 2px solid #f8077e; padding-bottom: 5px; margin-top: 20px; }
+              p, li { font-size: 14px; line-height: 1.6; }
+              ul { padding-left: 20px; }
+              .footer { font-size: 12px; text-align: center; margin-top: 40px; }
+              @media print {
+                  .no-print { display: none; }
+              }
+          </style>
+      </head>
+      <body>
+          <div class="container">
+              <div class="header">
+                  <img src="/images/logo_no_text.png" alt="Company Logo" class="logo">
+                  <h1>Patient Medical Report</h1>
+                  <p><strong>Name:</strong> ${patientData.name} | <strong>Gender:</strong> ${patientData.gender} | <strong>Blood Type:</strong> ${patientData.blood_type}</p>
+                  <p><strong>Age:</strong> ${patientData.age} | <strong>Place of Birth:</strong> ${patientData.place_of_birth}</p>
+              </div>
+              <div class="section">
+                  <h2>Medical Conditions</h2>
+                  <ul>
+                      ${patientData.medical_conditions.map(condition => `<li>${condition}</li>`).join('')}
+                  </ul>
+              </div>
+              <div class="section">
+                  <h2>Medications</h2>
+                  <ul>
+                      ${patientData.medications.map(medication => `<li>${medication}</li>`).join('')}
+                  </ul>
+              </div>
+              <div class="section">
+                  <h2>Allergies</h2>
+                  <ul>
+                      ${patientData.allergies.map(allergy => `<li>${allergy}</li>`).join('')}
+                  </ul>
+              </div>
+              <div class="section">
+                  <h2>Current Diagnosis</h2>
+                  <p>${patientData.current_diagnosis}</p>
+              </div>
+              <div class="section">
+                  <h2>Last Appointment</h2>
+                  <p><strong>Date:</strong> ${patientData.last_appointment.date} | <strong>Institution:</strong> ${patientData.last_appointment.institution}, ${patientData.last_appointment.city}</p>
+                  <p><strong>Details:</strong> ${patientData.last_appointment.description}</p>
+              </div>
+              <div class="section">
+                  <h2>Past Surgeries</h2>
+                  <ul>
+                      ${patientData.past_surgeries.map(surgery => `<li>${surgery}</li>`).join('')}
+                  </ul>
+              </div>
+              <div class="section">
+                  <h2>Lab Tests</h2>
+                  <ul>
+                      ${patientData.lab_tests.map(test => `<li>${test}</li>`).join('')}
+                  </ul>
+              </div>
+              <div class="footer">
+                  <p>Report generated on: <span>${new Date().toLocaleDateString()}</span></p>
+              </div>
+          </div>
+      </body>
+      </html>
+  `);
+  printWindow.document.close(); // Finish writing to the document
+  printWindow.focus(); // Focus on the new window
+  printWindow.print(); // Open the print dialog
+  //printWindow.close(); // Optionally close the window after printing
+                        }
+
+                        </script>
                 </main>
             </div>
         </div>

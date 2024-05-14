@@ -107,3 +107,19 @@ app.get("/settings", async function (req, res) {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+app.get("/patients/:id",async function(req, res){
+  const patientId = req.params.id;
+  try {
+    // Fetch the details of the selected patient by ID
+    const patient = await Patient.findOne({ patient_id: patientId });
+    if (!patient) {
+      return res.status(404).send("Patient not found");
+    }
+    res.json(patient);
+  } catch (error) {
+    console.error("Error fetching patient:", error);
+    res.status(500).send("Internal Server Error");
+  }
+})
+
