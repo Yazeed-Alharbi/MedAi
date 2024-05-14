@@ -42,12 +42,13 @@
                 id="color-mode-icon"
 />
                         </div>
-                        <form id="loginForm">
+                        <form id="loginForm" action="/" method="post">
                             <div class="form-group">
                                 <label for="username">Username</label>
                                 <input
                   type= "text"
                   class="form-control"
+                  name = "username"
                   id="username"
                   placeholder="Enter a Username"
 />
@@ -58,10 +59,16 @@
                                     <input
                     type="password"
                     class="form-control"
+                    name = "password"
                     id="password"
                     placeholder="Enter password"
 />
                                     <i class="fa-solid fa-eye" id="show-password-toggle"></i>
+                                    {% if error_message %}
+                                    <label style="color: red;">{{ error_message }}</label>
+                                    {% else %}
+                                    <label style="color: red;"></label>
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
@@ -75,7 +82,7 @@
                 >
                             </div>
 
-                            <button type="button" id="loginBtn" class="btn btn-block">Sign In</button>
+                            <button type="submit" id="loginBtn" class="btn btn-block">Sign In</button>
                         </form>
                     </div>
                 </div>

@@ -34,9 +34,11 @@ const PORT = 3000;
 app.get("/", async function (req, res) {
   res.render("login.njk");
 });
-app.post("/auth", async function (req, res) {
+app.post("/", async function (req, res) {
   console.log("we are logging in!!!")
+  console.log("body ", req.body)
   if (!req.body.username || !req.body.password) {
+    res.render("login.njk",{error_message: "Missing username and/or password"})
     console.log("Missing username and/or password");
     return;
   }
@@ -44,26 +46,16 @@ app.post("/auth", async function (req, res) {
   const physician = await Physician.findOne({ Username: req.body.username })
   if (!physician) {
     // Username not in the database
+    res.render("login.njk",{error_message: "Bad username"})
     console.log("Bad username");
   }
   else {
     // Check if password from database matches given password
     if (bcrypt.compareSync(req.body.password, physician.Password)) {
-      try {
-        // Fetch the first patient
-        const patient = await Patient.findOne(); // Modify as needed to fetch specific patient
-        console.log(patient.medications[0]);
-        if (!patient) {
-          return res.status(404).send("Patient not found");
-        }
-        // Render the dashboard template with the patient data
-        res.render("dashboard.njk", { patient: patient });
-      } catch (error) {
-        console.error("Error fetching patient:", error);
-        res.status(500).send("Internal Server Error");
-      }
+      res.redirect("/dashboard");
     }
     else {
+      res.render("login.njk",{error_message: "Incorrect password"})
       console.log("Incorrect password");
     }
   }

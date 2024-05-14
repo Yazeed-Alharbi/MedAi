@@ -7,28 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let settingsBulbIcon = document.getElementById("bulb-icon");
   let settingsAboutUsIcon = document.getElementById("about-us-icon");
   let settingsNotificationIcon = document.getElementById("notification-icon");
-  // for login event
-  let loginBtn = document.getElementById("loginBtn");
-  let email = document.getElementById("username")
-  let password = document.getElementById("password")
-  if (loginBtn){
-    loginBtn.onclick = ()=>{
-      let sentJson = {
-        username: email.value,
-        password: password.value
-      }
-      fetch("/auth", {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(sentJson)
-      }).then(response => {
-        console.log(response.statusText);
-        if (!response.ok) {
-          throw new Error("their is an error")
-        }
-      }).catch(err=>{console.log(err)})
-    }
-  }
   let dashboardPage = document.getElementsByClassName("dashboard-body")[0]
 
   function darkModeSetter() {
