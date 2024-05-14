@@ -172,15 +172,25 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-6 mb-4">
-                                        <div
-                      class="card-body rounded-border d-flex align-items-center"
-                    >
+                                        <div class="card-body rounded-border d-flex align-items-center">
                                             <div class="mr-2">
                                                 <i class="fas fa-calculator icon-rounded fa-lg"></i>
                                             </div>
                                             <div class="mr-2">
                                                 <h5 class="card-title">BMI</h5>
-                                                <p class="card-text">Suspected Herniated disk</p>
+                                                {% if patient.BMI < 18.5 %}
+                                                    <p class="card-text">Underweight</p>
+                                                {% elif patient.BMI >= 18.5 and patient.BMI < 25 %}
+                                                    <p class="card-text">Normal weight</p>
+                                                {% elif patient.BMI >= 25 and patient.BMI < 30 %}
+                                                    <p class="card-text">Overweight</p>
+                                                {% elif patient.BMI >= 30 and patient.BMI < 35 %}
+                                                    <p class="card-text">Obesity Class I</p>
+                                                {% elif patient.BMI >= 35 and patient.BMI < 40 %}
+                                                    <p class="card-text">Obesity Class II</p>
+                                                {% elif  patient.BMI >= 40 %}
+                                                    <p class="card-text">Obesity Class III (Morbid obesity)</p>
+                                                {% endif %}
                                             </div>
                                             <div class="ml-auto">
                                                 <a href="#" class="btn">{{ patient.BMI.toFixed(2) }}</a>
@@ -198,7 +208,7 @@
                                             </div>
                                             <div class="mr-2">
                                                 <h5 class="card-title">Past Surgeries</h5>
-                                                <p class="card-text">None</p>
+                                                <p class="card-text">{{patient.past_surgeries[0]}}</p>
                                             </div>
                                             <div class="ml-auto">
                                                 <a href="#" class="btn">Show more</a>
@@ -214,7 +224,7 @@
                                             </div>
                                             <div class="mr-2">
                                                 <h5 class="card-title">Chronic Diseases</h5>
-                                                <p class="card-text">{{patient.Current_Disease}}</p>
+                                                <p class="card-text">{{patient.medical_conditions[0]}}</p>
                                             </div>
                                             <div class="ml-auto">
                                                 <a href="#" class="btn">Show more</a>
@@ -232,7 +242,7 @@
                                             </div>
                                             <div class="mr-2">
                                                 <h5 class="card-title">Mental Health</h5>
-                                                <p class="card-text">{{patient.Mental_Health_Condition}}</p>
+                                                <p class="card-text">{{patient.Mental_Health_Condition[0]}}</p>
                                             </div>
                                             <div class="ml-auto">
                                                 <a href="#" class="btn">Show more</a>
@@ -248,7 +258,7 @@
                                             </div>
                                             <div class="mr-2">
                                                 <h5 class="card-title">Lab Tests</h5>
-                                                <p class="card-text">Normal</p>
+                                                <p class="card-text">{{patient.lab_tests[0]}}</p>
                                             </div>
                                             <div class="ml-auto">
                                                 <a href="#" class="btn">Show more</a>
@@ -266,22 +276,22 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="card-body">
-                                            <h5 class="card-title">MRI</h5>
+                                            <h5 class="card-title">{{patient.last_appointment.title}}</h5>
                                             <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipis...
+                        {{patient.last_appointment.description}}
                       </p>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="card-body">
                                             <p class="card-text">
-                                                <strong>Date</strong>: {{patient.last_appointment_date}}
+                                                <strong>Date</strong>: {{patient.last_appointment.date}}
                       </p>
                                             <p class="card-text">
-                                                <strong>Institution</strong>: Dhahran Health Center
+                                                <strong>Institution</strong>: {{patient.last_appointment.institution}}
                       </p>
                                             <p class="card-text">
-                                                <strong>City</strong>: Dhahran</p>
+                                                <strong>City</strong>: {{patient.last_appointment.city}}</p>
                                         </div>
                                     </div>
                                 </div>

@@ -13,6 +13,9 @@ const patientSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  place_of_birth: {
+    type: String,
+  },
   medical_conditions: {
     type: [String],
     default: [],
@@ -25,8 +28,25 @@ const patientSchema = new mongoose.Schema({
     type: Array,
     default: [],
   },
-  last_appointment_date: {
-    type: String,
+  last_appointment: {
+    type: {
+      date: {
+        type: String,
+      },
+      institution: {
+        type: String,
+      },
+      city: {
+        type: String,
+      },
+      title: {
+        type: String,
+      },
+      description: {
+        type: String,
+      }
+    },
+    default: null,
   },
   blood_type: {
     type: String,
@@ -41,7 +61,16 @@ const patientSchema = new mongoose.Schema({
     type: String,
   },
   Mental_Health_Condition: {
-    type: String,
+    type: Array,
+    default: [],
+  },
+  lab_tests: {
+    type: Array,
+    default: [],
+  },
+  past_surgeries: {
+    type: Array,
+    default: [],
   },
   Current_Diagnosis: {
     type: String,
